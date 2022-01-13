@@ -6,8 +6,12 @@ import Story from "../component/newsletter/story";
 import Edit from "../component/newsletter/edit";
 import CreateNesletter from "../component/forms";
 import HeaderSeaction from "../component/newsletter/header-section";
+import { axiosInstance, getConfig } from '../src/util/axios';
 
-export default function Home() {
+export default function Home(props:any) {
+    const newsletters = props 
+    console.log(newsletters,'------1--');
+     
     return (
         <>
             <Dsll />
@@ -23,3 +27,14 @@ export default function Home() {
     )
 }
 
+
+export async function getServerSideProps(router: any) {
+
+    let newsletter = await axiosInstance.get(`/system/newsletter`, getConfig(router));
+
+    return {
+      props: {
+         newsletter: newsletter.data 
+      }, // will be passed to the page component as props
+    }
+  }

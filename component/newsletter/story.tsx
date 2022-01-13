@@ -255,7 +255,7 @@ export default function Story() {
                                 bg={useColorModeValue("gray.50", "gray.900")}
                                 textAlign="left"
                             >
-                                <Button colorScheme='blue'>Save</Button>
+                                <Button colorScheme='blue' type='submit'>Save</Button>
                             </Box>
                         </chakra.form>
                     </GridItem>
