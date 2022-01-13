@@ -309,7 +309,7 @@ const NAV_ITEMS: Array<NavItem> = [
     href: '#',
   },
   {
-    label: 'Hire Designers',
-    href: '#',
+    label: 'Create Newsletter',
+    href: '/newsletter',
   },
 ];
